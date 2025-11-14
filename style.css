@@ -33,7 +33,7 @@ html,body{
    
 }
 
-#status{
+#istatus{
     margin-left: 0.8vh;
     flex-shrink: 0;
     height: 8vh;
@@ -45,10 +45,22 @@ html,body{
 }
 
 
-#status img{
+#istatus img{
     height: 100%;
     width: 100%;
     background-position: center;
     object-fit: cover;
     
+}
+#full{
+    
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    display: none;
+    
+
 }
