@@ -13,8 +13,6 @@ let arr = [
     dp: "https://plus.unsplash.com/premium_photo-1667520043080-53dcca77e2aa?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fG1vZGVsfGVufDB8fDB8fHww",
     story:
       "https://images.unsplash.com/photo-1514315384763-ba401779410f?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHdvbWFufGVufDB8fDB8fHww",
-      
-    
   },
   {
     dp: "https://images.unsplash.com/photo-1512310604669-443f26c35f52?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fG1vZGVsfGVufDB8fDB8fHww",
@@ -91,9 +89,42 @@ storyDiv.addEventListener("click", (dets) => {
   console.log(arr[dets.target.id].story);
 
   full.style.display = "block";
-  full.style.backgroundImage =`url(${arr[dets.target.id].story})`
+  full.style.backgroundImage = `url(${arr[dets.target.id].story})`;
 
   setTimeout(() => {
     full.style.display = "none";
   }, 1000);
+});
+
+let card = document.querySelector("#card");
+let liked = document.querySelector("#liked");
+let love = document.querySelector(".ri-heart-line");
+let flag = 0;
+card.addEventListener("dblclick", function () {
+  console.log("img click");
+  liked.style.transform = "translate(-50%, -50%) scale(1.1) rotate(0deg)";
+  setTimeout(function () {
+    liked.style.transform = "translate(-50%, -50%) scale(0) rotate(-140deg)";
+  }, 400);
+});
+
+love.addEventListener("click", function () {
+  console.log("luv click");
+  if (flag === 0) {
+
+    liked.style.transform = "translate(-50%, -50%) scale(1.1) rotate(0deg)";
+    love.style.color='red';
+    setTimeout(function () {
+      liked.style.transform = "translate(-50%, -50%) scale(0) rotate(-160deg)";
+    }, 600);
+
+    flag = 1
+    
+  }else{
+    setTimeout(function () {
+      liked.style.transform = "translate(-50%, -50%) scale(0) rotate(-160deg)";
+    }, 600);
+    love.style.color='black';
+    flag = 0;
+  }
 });

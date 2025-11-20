@@ -59,11 +59,11 @@ body {
   background-position: center;
   object-fit: cover;
   display: none;
+  z-index: 100;
 }
 
 .profile-card {
   display: flex;
-
   align-items: center;
   justify-content: space-between;
 }
@@ -92,24 +92,44 @@ body {
   border-radius: 50%;
 }
 
-.card img{
+#card {
+  position: relative;
+}
+
+#card #liked {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0) rotate(40deg);
+  transition: cubic-bezier(1,1,0,2.13) all 0.4s;
+  background-image: url("https://imgs.search.brave.com/SWQTVIuJ8onKcFC7KuTqnSntohnjxKz4DSfZZRqsr4o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9hYnN0cmFjdC1n/cmFkaWVudC1iYWNr/Z3JvdW5kXzExNzg0/NDAtMTc5LmpwZz9z/ZW10PWFpc19pbmNv/bWluZyZ3PTc0MCZx/PTgw");
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+
+  font-size: 12vh;
   
+}
+
+#card img {
   height: 70vh;
   width: 100%;
-  margin-bottom: 2vh;
+  margin-bottom: -0.5vh;
 }
 
-
-#profile-b-icons{
-    
-    display: flex;
-    justify-content: space-between;
-    padding-left: 5px;
-    padding-right:5px;
+#profile-b-icons {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-
-
-i {
-    font-size: 3vh;
+#profile-b-icons i {
+  font-size: 2.5vh;
+  /* background-clip: text;
+  
+    -webkit-background-clip: text;
+    background-color: brown; */
 }
