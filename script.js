@@ -95,5 +95,5 @@ storyDiv.addEventListener("click", (dets) => {
 
   setTimeout(() => {
     full.style.display = "none";
-  }, 2000);
+  }, 1000);
 });
