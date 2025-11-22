@@ -101,30 +101,29 @@ let liked = document.querySelector("#liked");
 let love = document.querySelector(".ri-heart-line");
 let flag = 0;
 card.addEventListener("dblclick", function () {
-  console.log("img click");
+  // console.log("img click");
   liked.style.transform = "translate(-50%, -50%) scale(1.1) rotate(0deg)";
+  love.style.color = "red";
   setTimeout(function () {
     liked.style.transform = "translate(-50%, -50%) scale(0) rotate(-140deg)";
   }, 400);
 });
 
 love.addEventListener("click", function () {
-  console.log("luv click");
+  // console.log("luv click");
   if (flag === 0) {
-
     liked.style.transform = "translate(-50%, -50%) scale(1.1) rotate(0deg)";
-    love.style.color='red';
+    love.style.color = "red";
     setTimeout(function () {
       liked.style.transform = "translate(-50%, -50%) scale(0) rotate(-160deg)";
     }, 600);
 
-    flag = 1
-    
-  }else{
+    flag = 1;
+  } else {
     setTimeout(function () {
       liked.style.transform = "translate(-50%, -50%) scale(0) rotate(-160deg)";
     }, 600);
-    love.style.color='black';
+    love.style.color = "black";
     flag = 0;
   }
 });
